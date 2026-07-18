@@ -46,7 +46,7 @@ export const Header: React.FC = () => {
       <div className="container navbar-container">
         <a href="/" className="nav-logo" onClick={(e) => handleNavLinkClick(e, 'home')}>
           <span>⚡</span>
-          <span>DevPortfolio</span>
+          <span>Souvanxay</span>
         </a>
 
         {/* Mobile Navigation Toggle Button */}

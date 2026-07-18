@@ -17,35 +17,32 @@ interface Project {
   title: string;
   description: string;
   tags: string[];
-  liveUrl: string;
-  githubUrl: string;
+  liveUrl?: string;
+  githubUrl?: string;
   imageUrl?: string;
 }
 
 const PROJECTS_DATA: Project[] = [
   {
-    title: "E-Commerce Interface",
-    description: "A highly responsive glassmorphic checkout application featuring complex state management and micro-interactions.",
-    tags: ['React', 'TypeScript', 'CSS modules'],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    title: "AI Code Review Extension",
+    description: "A VS Code extension that integrates advanced AI capabilities to perform automated, context-aware code reviews directly in the editor.",
+    tags: ['TypeScript', 'VS Code API', 'Node.js', 'AI APIs'],
+    githubUrl: "https://github.com/Got17/ai-code-review-vscode",
+    imageUrl: projectTask
+  },
+  {
+    title: "Reactive Web Application Platform",
+    description: "A full-stack reactive web portal built with F# and WebSharper, utilizing functional programming paradigms for server-client communication and state management.",
+    tags: ['F#', 'WebSharper', 'MSSQL', 'HTML5/CSS'],
+    githubUrl: "https://github.com/Got17",
     imageUrl: projectEcommerce
   },
   {
-    title: "Analytics Dashboard",
-    description: "Interactive data visualization charts built using SVG and canvas with real-time WebSocket connection.",
-    tags: ['Next.js', 'Chart.js', 'WebSockets'],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    title: "Distributed System Integration Gateway",
+    description: "A full-stack administration and monitoring dashboard for microservices, coordinating data streams between remote postal systems and secure government APIs.",
+    tags: ['NestJS', 'Go', 'React', 'PostgreSQL', 'Redis'],
+    githubUrl: "https://github.com/Got17",
     imageUrl: projectDashboard
-  },
-  {
-    title: "Task Orchestrator",
-    description: "A lightweight kanban-style management workflow tool built with Drag and Drop and offline support.",
-    tags: ['React', 'Vite', 'IndexedDB'],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
-    imageUrl: projectTask
   }
 ];
 
@@ -59,35 +56,35 @@ interface Experience {
 
 const EXPERIENCE_DATA: Experience[] = [
   {
-    year: "2024 - Present",
-    title: "Senior Software Engineer",
-    company: "TechCorp Solutions",
-    description: "Lead frontend development for enterprise analytics platform. Established modular design systems, reducing styling bundle size by 40% and accelerating page assembly speed.",
-    tags: ['React', 'TypeScript', 'Tailwind', 'Webpack']
+    year: "March 2026 - Present",
+    title: "Backend Developer",
+    company: "AIF Group (Laos)",
+    description: "Maintain and integrate national-scale backend applications including LaoPost and the Government Data Exchange (GDX) platform. Connect multi-party distributed sites and optimize integration flows.",
+    tags: ['NestJS', 'Go', 'PostgreSQL', 'Redis', 'GDX']
   },
   {
-    year: "2022 - 2024",
-    title: "Frontend Developer",
-    company: "Creative Web Labs",
-    description: "Designed and deployed high-performance responsive marketing websites and single-page apps. Collaborated closely with designers to build bespoke interactive features and custom layouts.",
-    tags: ['Vue.js', 'Vite', 'Sass', 'Figma']
+    year: "August 2024 - December 2025",
+    title: "F# Developer (Internship)",
+    company: "IntelliFactory (Hungary)",
+    description: "Developed full-stack features and maintained IntelliFactory's core technology framework, WebSharper (reactive F# web framework). Maintained relational databases.",
+    tags: ['F#', 'WebSharper', 'MSSQL', 'HTML5/CSS']
   },
   {
-    year: "2020 - 2022",
-    title: "Junior Web Engineer",
-    company: "Pixel Studio",
-    description: "Maintained client websites and configured modern content management systems. Implemented SEO improvements and streamlined accessibility standards.",
-    tags: ['HTML5', 'Vanilla JS', 'CSS Grid', 'WordPress']
+    year: "September 2022 - January 2026",
+    title: "B.Sc. in Computer Engineering",
+    company: "University in Hungary",
+    description: "Completed specialized degree in Computer Engineering, focusing on software design, systems, and algorithms.",
+    tags: ['Computer Science', 'Systems', 'Algorithms', 'Hardware/Software']
   }
 ];
 
 const SKILLS_DATA = [
-  "React & Next.js",
-  "TypeScript",
-  "CSS Systems",
-  "UI/UX Prototyping",
-  "State Management",
-  "Performance Audit"
+  "Go & NestJS",
+  "F# & WebSharper",
+  "PostgreSQL & Redis & MSSQL",
+  "System Integration (GDX)",
+  "REST APIs & WebSockets",
+  "Docker & Cloudflare Tunnels"
 ];
 
 const App: React.FC = () => {
@@ -117,11 +114,11 @@ const App: React.FC = () => {
             <div className="hero-content animate-slide-up">
               <p className="hero-subtitle">Hi, my name is</p>
               <h1 className="hero-title">
-                Creative <span>Software Engineer</span>
+                Souvanxay <span>Luangsouvannavong</span>
               </h1>
               <p className="hero-description">
-                I build clean, accessible, and high-performance web applications.
-                Specialized in React, TypeScript, and crafting interactive modern user experiences.
+                I build robust, scalable server architectures and secure system integrations.
+                Specialized in NestJS, Go, and F#, with experience bridging government-scale data exchange (GDX) platforms and postal services (LaoPost).
               </p>
               <div className="hero-cta">
                 <Button variant="primary" onClick={() => handleScrollTo('projects')}>
@@ -135,7 +132,7 @@ const App: React.FC = () => {
             <div className="hero-visual animate-fade-in">
               <div className="hero-blob"></div>
               <div className="hero-image-container">
-                <img src={heroImage} alt="Creative Software Engineer Graphic" className="hero-image" />
+                <img src={heroImage} alt="Souvanxay Luangsouvannavong Graphic" className="hero-image" />
               </div>
             </div>
           </div>
@@ -148,13 +145,13 @@ const App: React.FC = () => {
               <div className="about-content">
                 <h2 className="section-title">About Me</h2>
                 <p className="about-text">
-                  I am a passionate developer focused on building interactive, user-centered digital products.
-                  With a solid background in software design systems, UI architectures, and performance optimization, 
-                  I aim to bridge the gap between design and engineering.
+                  I am a backend-focused Software Engineer with a passion for designing reliable system architectures and connecting distributed systems. 
+                  I hold a Bachelor's degree in Computer Engineering from Hungary (graduated January 2026), where I worked as a part-time F# Developer at IntelliFactory, 
+                  contributing to WebSharper (a full-stack F# reactive web framework).
                 </p>
                 <p className="about-text">
-                  My design philosophy revolves around simplicity, accessibility, and subtle micro-interactions that 
-                  elevate the user experience.
+                  Currently, I am working at AIF Group in Laos as a Backend Developer, maintaining and integrating critical national infrastructure projects 
+                  like LaoPost and the Government Data Exchange (GDX) platform.
                 </p>
                 <div className="about-skills">
                   <h3 className="skills-title">Core Skills</h3>
@@ -171,7 +168,7 @@ const App: React.FC = () => {
                 <div className="about-illustration-box glass-panel glow-effect">
                   <div className="illustration-icon">🚀</div>
                   <h4>Interactive & Dynamic</h4>
-                  <p>Fostering interactive motion, layout animations, and premium custom styling conventions.</p>
+                  <p>Fostering interactive motion, layout integrations, and secure backend communication systems.</p>
                 </div>
               </div>
             </div>
@@ -229,18 +226,18 @@ const App: React.FC = () => {
             <div className="contact-card glass-panel glow-effect">
               <h2 className="section-title text-center">Get In Touch</h2>
               <p className="contact-description text-center">
-                Have an exciting project, job opening, or want to discuss design systems? Drop me a line, and let's build something awesome together.
+                Have an exciting project, job opening, or want to discuss system architectures? Drop me a line, and let's build something awesome together.
               </p>
               <div className="contact-actions">
                 <Button 
                   variant="primary" 
-                  onClick={() => window.location.href = 'mailto:hello@example.com'}
+                  onClick={() => window.location.href = 'mailto:souvanxay38@gmail.com'}
                 >
                   Send Email
                 </Button>
                 <Button 
                   variant="outline" 
-                  onClick={() => window.open('https://linkedin.com', '_blank', 'noopener,noreferrer')}
+                  onClick={() => window.open('https://www.linkedin.com/in/souvanxay-luangsouvannavong/', '_blank', 'noopener,noreferrer')}
                 >
                   LinkedIn
                 </Button>

@@ -1,0 +1,179 @@
+:root {
+  /* Color Palette - Raw HSL channels (Minimalist & Clean Variant B)
+     Allows easy native opacity override: hsla(var(--accent-hsl), 0.5) */
+  --bg-primary-hsl: 0, 0%, 98%;      /* Warm off-white */
+  --bg-secondary-hsl: 0, 0%, 100%;   /* Warm white card/box bg */
+  --bg-glass-hsl: 0, 0%, 100%;       /* Glass card base */
+  --text-primary-hsl: 240, 10%, 4%;  /* Almost black */
+  --text-secondary-hsl: 240, 5%, 35%;/* Charcoal */
+  --text-muted-hsl: 240, 4%, 60%;    /* Warm gray */
+  --accent-hsl: 12, 90%, 55%;        /* Bright Coral */
+  --accent-light-hsl: 12, 90%, 65%;  /* Lighter highlight */
+  --border-color-hsl: 240, 5.9%, 90%;/* Clean border */
+  --border-glass-hsl: 240, 5.9%, 93%;/* Glass boundary */
+
+  /* Compiled Color Variables */
+  --bg-primary: hsl(var(--bg-primary-hsl));
+  --bg-secondary: hsl(var(--bg-secondary-hsl));
+  --bg-glass: hsla(var(--bg-glass-hsl), 0.85);
+  --text-primary: hsl(var(--text-primary-hsl));
+  --text-secondary: hsl(var(--text-secondary-hsl));
+  --text-muted: hsl(var(--text-muted-hsl));
+  --accent: hsl(var(--accent-hsl));
+  --accent-light: hsl(var(--accent-light-hsl));
+  --accent-glow: hsla(var(--accent-hsl), 0.1);
+  --border-color: hsl(var(--border-color-hsl));
+  --border-glass: hsl(var(--border-glass-hsl));
+
+  /* Shadows (Unified system shadow levels) */
+  --shadow-color-rgb: 0, 0, 0;
+  --shadow-sm: 0 1px 2px 0 rgba(var(--shadow-color-rgb), 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(var(--shadow-color-rgb), 0.03), 0 2px 4px -1px rgba(var(--shadow-color-rgb), 0.02);
+  --shadow-lg: 0 10px 15px -3px rgba(var(--shadow-color-rgb), 0.03), 0 4px 6px -2px rgba(var(--shadow-color-rgb), 0.02);
+  --shadow-glow: 0 0 20px hsla(var(--accent-hsl), 0.2);
+
+  /* Typography Fonts (Split Heading & Body) */
+  --font-heading: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Typography Scales (Major Third 1.25 Ratio) */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.25rem;     /* 20px */
+  --text-xl: 1.563rem;    /* 25px */
+  --text-2xl: 1.953rem;   /* 31.25px */
+  --text-3xl: 2.441rem;   /* 39px */
+  --text-4xl: 3.052rem;   /* 48.8px */
+  --text-5xl: 3.815rem;   /* 61px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --lh-tight: 1.15;
+  --lh-snug: 1.3;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.625;
+
+  /* Spacing Scale (8pt grid base) */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* Layout Containers */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Glassmorphism blur */
+  --backdrop-blur: blur(12px);
+
+  /* Transitions & Animation Duration/Easing */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark Mode Override (System Preference)
+   Duplicates variables between prefers-color-scheme and class overrides
+   deliberately to support both automatic dark-mode and manual user toggle. */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --bg-primary-hsl: 240, 10%, 4%; /* Charcoal black */
+    --bg-secondary-hsl: 240, 5.9%, 10%; /* Dark grey card */
+    --bg-glass-hsl: 240, 5.9%, 10%;
+    --text-primary-hsl: 0, 0%, 98%; /* Warm white */
+    --text-secondary-hsl: 240, 5%, 70%; /* Silver Gray */
+    --text-muted-hsl: 240, 4%, 50%;
+    --border-color-hsl: 240, 5.9%, 20%;
+    --border-glass-hsl: 240, 5.9%, 25%;
+
+    --bg-primary: hsl(var(--bg-primary-hsl));
+    --bg-secondary: hsl(var(--bg-secondary-hsl));
+    --bg-glass: hsla(var(--bg-glass-hsl), 0.85);
+    --text-primary: hsl(var(--text-primary-hsl));
+    --text-secondary: hsl(var(--text-secondary-hsl));
+    --text-muted: hsl(var(--text-muted-hsl));
+    --accent-glow: hsla(var(--accent-hsl), 0.2);
+    --border-color: hsl(var(--border-color-hsl));
+    --border-glass: hsl(var(--border-glass-hsl));
+
+    --shadow-sm: 0 1px 2px 0 rgba(var(--shadow-color-rgb), 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(var(--shadow-color-rgb), 0.4), 0 2px 4px -1px rgba(var(--shadow-color-rgb), 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(var(--shadow-color-rgb), 0.5), 0 4px 6px -2px rgba(var(--shadow-color-rgb), 0.3);
+    --shadow-glow: 0 0 25px hsla(var(--accent-hsl), 0.3);
+  }
+}
+
+/* Explicit Dark Mode Class Override */
+:root.dark {
+  --bg-primary-hsl: 240, 10%, 4%;
+  --bg-secondary-hsl: 240, 5.9%, 10%;
+  --bg-glass-hsl: 240, 5.9%, 10%;
+  --text-primary-hsl: 0, 0%, 98%;
+  --text-secondary-hsl: 240, 5%, 70%;
+  --text-muted-hsl: 240, 4%, 50%;
+  --border-color-hsl: 240, 5.9%, 20%;
+  --border-glass-hsl: 240, 5.9%, 25%;
+
+  --bg-primary: hsl(var(--bg-primary-hsl));
+  --bg-secondary: hsl(var(--bg-secondary-hsl));
+  --bg-glass: hsla(var(--bg-glass-hsl), 0.85);
+  --text-primary: hsl(var(--text-primary-hsl));
+  --text-secondary: hsl(var(--text-secondary-hsl));
+  --text-muted: hsl(var(--text-muted-hsl));
+  --accent-glow: hsla(var(--accent-hsl), 0.2);
+  --border-color: hsl(var(--border-color-hsl));
+  --border-glass: hsl(var(--border-glass-hsl));
+
+  --shadow-sm: 0 1px 2px 0 rgba(var(--shadow-color-rgb), 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(var(--shadow-color-rgb), 0.4), 0 2px 4px -1px rgba(var(--shadow-color-rgb), 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(var(--shadow-color-rgb), 0.5), 0 4px 6px -2px rgba(var(--shadow-color-rgb), 0.3);
+  --shadow-glow: 0 0 25px hsla(var(--accent-hsl), 0.3);
+}
+
+/* Explicit Light Mode Class Override */
+:root.light {
+  --bg-primary-hsl: 0, 0%, 98%;
+  --bg-secondary-hsl: 0, 0%, 100%;
+  --bg-glass-hsl: 0, 0%, 100%;
+  --text-primary-hsl: 240, 10%, 4%;
+  --text-secondary-hsl: 240, 5%, 35%;
+  --text-muted-hsl: 240, 4%, 60%;
+  --border-color-hsl: 240, 5.9%, 90%;
+  --border-glass-hsl: 240, 5.9%, 93%;
+
+  --bg-primary: hsl(var(--bg-primary-hsl));
+  --bg-secondary: hsl(var(--bg-secondary-hsl));
+  --bg-glass: hsla(var(--bg-glass-hsl), 0.85);
+  --text-primary: hsl(var(--text-primary-hsl));
+  --text-secondary: hsl(var(--text-secondary-hsl));
+  --text-muted: hsl(var(--text-muted-hsl));
+  --accent-glow: hsla(var(--accent-hsl), 0.1);
+  --border-color: hsl(var(--border-color-hsl));
+  --border-glass: hsl(var(--border-glass-hsl));
+
+  --shadow-sm: 0 1px 2px 0 rgba(var(--shadow-color-rgb), 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(var(--shadow-color-rgb), 0.03), 0 2px 4px -1px rgba(var(--shadow-color-rgb), 0.02);
+  --shadow-lg: 0 10px 15px -3px rgba(var(--shadow-color-rgb), 0.03), 0 4px 6px -2px rgba(var(--shadow-color-rgb), 0.02);
+  --shadow-glow: 0 0 20px hsla(var(--accent-hsl), 0.2);
+}

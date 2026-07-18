@@ -12,6 +12,8 @@ A deployed, fully responsive, modern portfolio website (containing Hero, About/S
 ## Decisions so far
 
 - [Prototype: Design Aesthetics Comparison](tickets/0001-prototype-design.md) — Selected the Minimalist & Clean aesthetic (Variant B) characterized by warm/light backgrounds, high contrast, crisp typography, and coral/charcoal accents.
+- [Define DESIGN.md design system and tokens](tickets/0003-define-design-system.md) — Established a custom font hierarchy (Outfit/Inter), an HSL color palette (coral/charcoal), an 8pt spacing grid, and subtle glassmorphic styling.
+
 
 ## Not yet specified
 - **Form Handling:** Whether to use a third-party form handler (e.g., Formspree, EmailJS) or simple mailto links for the contact section.

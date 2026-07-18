@@ -1,95 +1,6 @@
+@import './variables.css';
 @import './components.css';
 
-:root {
-  /* Color Palette (Aesthetic HSL tailwind-like colors - Minimalist & Clean Variant B) */
-  --bg-primary: hsl(0, 0%, 98%); /* warm light grey */
-  --bg-secondary: hsl(0, 0%, 100%); /* warm white card/box bg */
-  --bg-glass: rgba(250, 250, 250, 0.85);
-  --text-primary: hsl(240, 10%, 4%); /* almost black */
-  --text-secondary: hsl(240, 5%, 35%); /* charcoal */
-  --text-muted: hsl(240, 4%, 60%);
-  --accent: hsl(12, 90%, 55%); /* Bright Coral */
-  --accent-light: hsl(12, 90%, 65%);
-  --accent-glow: rgba(244, 63, 94, 0.1);
-  --border-color: hsl(240, 5.9%, 90%);
-  --border-glass: hsl(240, 5.9%, 93%);
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.03), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
-  --shadow-glow: 0 0 20px rgba(244, 63, 94, 0.2);
-
-  /* Typography */
-  --font-sans: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-
-  /* Transitions */
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* Border Radius */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-full: 9999px;
-}
-
-/* Dark Mode Override */
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    --bg-primary: hsl(240, 10%, 4%); /* charcoal black */
-    --bg-secondary: hsl(240, 5.9%, 10%); /* dark grey */
-    --bg-glass: rgba(10, 10, 12, 0.85);
-    --text-primary: hsl(0, 0%, 98%); /* warm light white */
-    --text-secondary: hsl(240, 5%, 70%); /* medium grey */
-    --text-muted: hsl(240, 4%, 50%);
-    --accent: hsl(12, 90%, 55%); /* Bright Coral */
-    --accent-light: hsl(12, 90%, 65%);
-    --accent-glow: rgba(244, 63, 94, 0.2);
-    --border-color: hsl(240, 5.9%, 20%);
-    --border-glass: hsl(240, 5.9%, 25%);
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
-    --shadow-glow: 0 0 25px rgba(244, 63, 94, 0.3);
-  }
-}
-
-:root.dark {
-  --bg-primary: hsl(240, 10%, 4%); /* charcoal black */
-  --bg-secondary: hsl(240, 5.9%, 10%); /* dark grey */
-  --bg-glass: rgba(10, 10, 12, 0.85);
-  --text-primary: hsl(0, 0%, 98%); /* warm light white */
-  --text-secondary: hsl(240, 5%, 70%); /* medium grey */
-  --text-muted: hsl(240, 4%, 50%);
-  --accent: hsl(12, 90%, 55%); /* Bright Coral */
-  --accent-light: hsl(12, 90%, 65%);
-  --accent-glow: rgba(244, 63, 94, 0.2);
-  --border-color: hsl(240, 5.9%, 20%);
-  --border-glass: hsl(240, 5.9%, 25%);
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 25px rgba(244, 63, 94, 0.3);
-}
-
-:root.light {
-  --bg-primary: hsl(0, 0%, 98%); /* warm light grey */
-  --bg-secondary: hsl(0, 0%, 100%); /* warm white card/box bg */
-  --bg-glass: rgba(250, 250, 250, 0.85);
-  --text-primary: hsl(240, 10%, 4%); /* almost black */
-  --text-secondary: hsl(240, 5%, 35%); /* charcoal */
-  --text-muted: hsl(240, 4%, 60%);
-  --accent: hsl(12, 90%, 55%); /* Bright Coral */
-  --accent-light: hsl(12, 90%, 65%);
-  --accent-glow: rgba(244, 63, 94, 0.1);
-  --border-color: hsl(240, 5.9%, 90%);
-  --border-glass: hsl(240, 5.9%, 93%);
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-glow: 0 0 20px rgba(244, 63, 94, 0.2);
-}
 
 /* Reset & Base Styles */
 *, *::before, *::after {
@@ -104,10 +15,10 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: var(--lh-relaxed);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -123,8 +34,9 @@ body {
 
 /* Typography elements */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.25;
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--lh-tight);
   color: var(--text-primary);
   letter-spacing: -0.025em;
 }
@@ -147,12 +59,21 @@ code {
 /* Common Layout Utilities */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container-xl);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
 }
+
+/* Glassmorphism Panel Utility */
+.glass-panel {
+  background-color: var(--bg-glass);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border: 1px solid var(--border-glass);
+}
+
 
 /* Micro-animations */
 @keyframes fadeIn {

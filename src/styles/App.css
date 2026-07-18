@@ -20,8 +20,9 @@
   right: 0;
   height: 80px;
   background-color: var(--bg-glass);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+
   border-bottom: 1px solid var(--border-glass);
   z-index: 100;
   display: flex;

@@ -38,9 +38,10 @@ const PROJECTS_DATA: Project[] = [
     imageUrl: laoFinstatLogo
   },
   {
-    title: "AI Code Review Extension",
-    description: "A VS Code extension that integrates advanced AI capabilities to perform automated, context-aware code reviews directly in the developer's editor workspace.",
-    tags: ['TypeScript', 'VS Code API', 'Node.js', 'AI APIs'],
+    title: "WebSharper Code Review",
+    description: "Offline AI code review VS Code extension for F# and WebSharper. Uses Ollama for local LLM inference, RAG over bundled references, and a shadow Git repo to snapshot accepted suggestions without touching the user's repo.",
+    tags: ['TypeScript', 'VS Code API', 'Ollama', 'F#', 'WebSharper', 'RAG'],
+    liveUrl: "https://marketplace.visualstudio.com/items?itemName=souvanxay.ws-code-review",
     githubUrl: "https://github.com/Got17/ai-code-review-vscode",
     imageUrl: websharperCodeReviewLogo
   }

@@ -113,6 +113,19 @@
 }
 
 /* Project Card Styles */
+.project-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  height: 100%;
+}
+
+.project-card-link--disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
 .project-card {
   display: flex;
   flex-direction: column;

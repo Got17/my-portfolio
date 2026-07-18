@@ -8,9 +8,9 @@ import './styles/App.css';
 
 // Visual assets
 import heroImage from './assets/hero.png';
-import projectEcommerce from './assets/project-ecommerce.jpg';
-import projectDashboard from './assets/project-dashboard.jpg';
-import projectTask from './assets/project-task.jpg';
+import laoFinstatLogo from './assets/lao-finstat.png';
+import budapestGatewayLogo from './assets/budapest-gateway.png';
+import websharperCodeReviewLogo from './assets/websharper-code-review.png';
 
 // Project constants
 interface Project {
@@ -24,25 +24,25 @@ interface Project {
 
 const PROJECTS_DATA: Project[] = [
   {
+    title: "Budapest Gateway Platform",
+    description: "A fullstack customer visa and residency management platform for Hungary. Features client portal onboarding checklists, dynamic case lifecycles, custom document validation streams, and an Admin hub.",
+    tags: ['Next.js', 'NestJS', 'Prisma', 'PostgreSQL', 'Sentry', 'Playwright'],
+    liveUrl: "https://www.budapestgateway.com/",
+    imageUrl: budapestGatewayLogo
+  },
+  {
+    title: "Lao Financial Statements Automation",
+    description: "A secure document processing engine (lao-finstat) that automates financial statement creation by scanning Excel Trial Balance sheets and generating formatted Word templates using cookie token-pair auth and CSRF protection.",
+    tags: ['FastAPI', 'Python', 'Next.js', 'PostgreSQL', 'Docker', 'CSRF Auth'],
+    liveUrl: "https://app.pvs-laos.com/login?from=%2F",
+    imageUrl: laoFinstatLogo
+  },
+  {
     title: "AI Code Review Extension",
-    description: "A VS Code extension that integrates advanced AI capabilities to perform automated, context-aware code reviews directly in the editor.",
+    description: "A VS Code extension that integrates advanced AI capabilities to perform automated, context-aware code reviews directly in the developer's editor workspace.",
     tags: ['TypeScript', 'VS Code API', 'Node.js', 'AI APIs'],
     githubUrl: "https://github.com/Got17/ai-code-review-vscode",
-    imageUrl: projectTask
-  },
-  {
-    title: "Reactive Web Application Platform",
-    description: "A full-stack reactive web portal built with F# and WebSharper, utilizing functional programming paradigms for server-client communication and state management.",
-    tags: ['F#', 'WebSharper', 'MSSQL', 'HTML5/CSS'],
-    githubUrl: "https://github.com/Got17",
-    imageUrl: projectEcommerce
-  },
-  {
-    title: "Distributed System Integration Gateway",
-    description: "A full-stack administration and monitoring dashboard for microservices, coordinating data streams between remote postal systems and secure government APIs.",
-    tags: ['NestJS', 'Go', 'React', 'PostgreSQL', 'Redis'],
-    githubUrl: "https://github.com/Got17",
-    imageUrl: projectDashboard
+    imageUrl: websharperCodeReviewLogo
   }
 ];
 
@@ -203,7 +203,7 @@ const App: React.FC = () => {
           <div className="container">
             <h2 className="section-title text-center">Work Experience</h2>
             <p className="section-subtitle text-center">
-              My professional history as a software engineer and front-end developer.
+              My professional history as a full-stack and backend software engineer.
             </p>
             <div className="timeline">
               {EXPERIENCE_DATA.map((exp) => (

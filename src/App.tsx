@@ -67,7 +67,7 @@ const EXPERIENCE_DATA: Experience[] = [
     year: "August 2024 - December 2025",
     title: "F# Developer (Internship)",
     company: "IntelliFactory (Hungary)",
-    description: "Developed full-stack features and maintained IntelliFactory's core technology framework, WebSharper (reactive F# web framework). Maintained relational databases.",
+    description: "Developed full-stack features and maintained IntelliFactory's core technology framework, WebSharper (reactive F# web framework).",
     tags: ['F#', 'WebSharper', 'MSSQL', 'HTML5/CSS']
   },
   {

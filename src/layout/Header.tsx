@@ -21,12 +21,35 @@ export const Header: React.FC = () => {
   }, []);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsMobileMenuOpen(prev => !prev);
   };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  // Lock body scroll when drawer open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isMobileMenuOpen]);
+
+  // Escape key closes drawer
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeMobileMenu();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   const handleNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
-    setIsMobileMenuOpen(false);
+    closeMobileMenu();
     
     const targetElement = document.getElementById(targetId);
     if (targetElement) {
@@ -60,6 +83,15 @@ export const Header: React.FC = () => {
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>
         </button>
+
+        {/* Backdrop overlay — tap to close drawer */}
+        {isMobileMenuOpen && (
+          <div
+            className="nav-backdrop"
+            onClick={closeMobileMenu}
+            aria-hidden="true"
+          />
+        )}
 
         {/* Navigation links & Drawer */}
         <nav className={`nav-menu ${isMobileMenuOpen ? 'nav-menu-open' : ''}`}>

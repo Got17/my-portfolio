@@ -66,6 +66,13 @@ code {
   padding-right: var(--space-6);
 }
 
+@media (max-width: 480px) {
+  .container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+}
+
 /* Glassmorphism Panel Utility */
 .glass-panel {
   background-color: var(--bg-glass);

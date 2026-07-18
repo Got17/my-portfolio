@@ -15,6 +15,8 @@ A deployed, fully responsive, modern portfolio website (containing Hero, About/S
 - [Define DESIGN.md design system and tokens](tickets/0003-define-design-system.md) — Established a custom font hierarchy (Outfit/Inter), an HSL color palette (coral/charcoal), an 8pt spacing grid, and subtle glassmorphic styling.
 - [Build Core UI Components and Layout](tickets/0004-build-core-components.md) — Created standard layouts (Header, Footer) and modular UI components (ProjectCard, TimelineItem) with smooth responsive animations.
 - [Assemble Pages and Content Sections](tickets/0005-assemble-sections.md) — Fully assembled all five content sections on the homepage, populated them with high-fidelity visual mockups, and verified clean compilation.
+- [Setup Deployment (Vercel/Netlify)](tickets/0006-setup-deployment.md) — Set up dual deployment paths: browser-based Vercel CI/CD integration and a containerized Docker configuration for local hosting on their laptop server.
+
 
 
 

@@ -6,6 +6,12 @@ import { ProjectCard } from './components/ProjectCard';
 import { TimelineItem } from './components/TimelineItem';
 import './styles/App.css';
 
+// Visual assets
+import heroImage from './assets/hero.png';
+import projectEcommerce from './assets/project-ecommerce.jpg';
+import projectDashboard from './assets/project-dashboard.jpg';
+import projectTask from './assets/project-task.jpg';
+
 // Project constants
 interface Project {
   title: string;
@@ -13,6 +19,7 @@ interface Project {
   tags: string[];
   liveUrl: string;
   githubUrl: string;
+  imageUrl?: string;
 }
 
 const PROJECTS_DATA: Project[] = [
@@ -21,21 +28,24 @@ const PROJECTS_DATA: Project[] = [
     description: "A highly responsive glassmorphic checkout application featuring complex state management and micro-interactions.",
     tags: ['React', 'TypeScript', 'CSS modules'],
     liveUrl: "https://example.com",
-    githubUrl: "https://github.com"
+    githubUrl: "https://github.com",
+    imageUrl: projectEcommerce
   },
   {
     title: "Analytics Dashboard",
     description: "Interactive data visualization charts built using SVG and canvas with real-time WebSocket connection.",
     tags: ['Next.js', 'Chart.js', 'WebSockets'],
     liveUrl: "https://example.com",
-    githubUrl: "https://github.com"
+    githubUrl: "https://github.com",
+    imageUrl: projectDashboard
   },
   {
     title: "Task Orchestrator",
     description: "A lightweight kanban-style management workflow tool built with Drag and Drop and offline support.",
     tags: ['React', 'Vite', 'IndexedDB'],
     liveUrl: "https://example.com",
-    githubUrl: "https://github.com"
+    githubUrl: "https://github.com",
+    imageUrl: projectTask
   }
 ];
 
@@ -125,9 +135,7 @@ const App: React.FC = () => {
             <div className="hero-visual animate-fade-in">
               <div className="hero-blob"></div>
               <div className="hero-image-container">
-                <div className="hero-image-placeholder">
-                  💻
-                </div>
+                <img src={heroImage} alt="Creative Software Engineer Graphic" className="hero-image" />
               </div>
             </div>
           </div>
@@ -186,6 +194,7 @@ const App: React.FC = () => {
                   tags={project.tags}
                   liveUrl={project.liveUrl}
                   githubUrl={project.githubUrl}
+                  imageUrl={project.imageUrl}
                 />
               ))}
             </div>

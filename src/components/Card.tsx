@@ -13,8 +13,9 @@ export const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div className={`card ${className}`} {...props}>
-      {title && <h3 style={{ marginBottom: '0.75rem', fontSize: '1.25rem' }}>{title}</h3>}
+      {title && <h3 className="card-title">{title}</h3>}
       {children}
     </div>
   );
 };
+export default Card;

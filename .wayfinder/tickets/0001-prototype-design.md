@@ -2,8 +2,8 @@
 id: "0001-prototype-design"
 title: "Prototype: Design Aesthetics Comparison (Sleek Dark Mode vs. Minimalist & Clean)"
 type: "prototype"
-status: "open"
-assignee: ""
+status: "closed"
+assignee: "antigravity"
 blocked_by: []
 ---
 
@@ -15,3 +15,8 @@ To resolve this, we will build a side-by-side or toggleable static HTML/CSS/JS p
 ## Deliverables
 - A prototype folder containing sample sections for both styles.
 - A user decision on the final portfolio aesthetic.
+
+## Resolution
+The user reviewed the prototype running on port 3000 and selected **Minimalist & Clean** as the preferred design aesthetic.
+We will proceed with a light/warm background theme, crisp typography, clean whitespace, and charcoal/black accents for the final portfolio.
+

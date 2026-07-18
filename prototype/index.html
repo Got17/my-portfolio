@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aesthetics Prototype: Portfolio Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+
+  <!-- Main Showcase Container -->
+  <div class="prototype-container">
+    
+    <!-- Header Indicator -->
+    <header class="proto-header">
+      <div class="logo">
+        <span class="logo-dot"></span>
+        <span class="logo-text">Alex Rivera</span>
+      </div>
+      <nav class="proto-nav">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="proto-badge">Prototype Mode</div>
+    </header>
+
+    <main class="proto-main">
+      <!-- HERO SECTION -->
+      <section class="section hero-section">
+        <div class="tagline-container">
+          <span class="eyebrow-tag">Available for Freelance & Contracts</span>
+        </div>
+        <h1 class="hero-title">
+          Building <span class="gradient-text">stunning digital products</span> with clean code.
+        </h1>
+        <p class="hero-subtitle">
+          I'm a Fullstack Developer and UI/UX enthusiast specializing in crafting premium, high-performance web applications that leave a lasting impression.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </section>
+
+      <!-- CARD COMPONENT PREVIEW -->
+      <section class="section component-section">
+        <h2 class="section-title">Component Showcase</h2>
+        <div class="grid-showcase">
+          <!-- Project Card -->
+          <div class="project-card">
+            <div class="card-image-placeholder">
+              <div class="card-badge">Featured Project</div>
+              <!-- Floating graphic element -->
+              <div class="graphic-element"></div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Web3</span>
+              </div>
+              <h3 class="card-title">Nova Finance Dashboard</h3>
+              <p class="card-desc">
+                A premium, glassmorphic analytics dashboard for modern crypto portfolios. Features real-time charts, transaction histories, and multi-wallet management.
+              </p>
+              <a href="#" class="card-link">
+                Explore Project 
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Skills Card -->
+          <div class="skills-card">
+            <h3 class="skills-title">Core Expertise</h3>
+            <p class="skills-desc">Tools and frameworks I leverage to bring concepts to life.</p>
+            <div class="skills-list">
+              <div class="skill-item">
+                <span class="skill-name">Frontend Engineering</span>
+                <span class="skill-val">React, Next.js, Vite, TypeScript</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Styling & Motion</span>
+                <span class="skill-val">Vanilla CSS, Framer Motion, GSAP</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Backend & API</span>
+                <span class="skill-val">Node.js, Express, PostgreSQL, REST/GraphQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- FLOATING CONTROL BAR -->
+  <div class="floating-control-bar">
+    <div class="control-label">Aesthetic Option:</div>
+    <div class="control-buttons">
+      <button class="control-btn active" id="btn-dark" onclick="setTheme('dark')">
+        <span class="color-dot dark-dot"></span>
+        Sleek Dark Mode
+      </button>
+      <button class="control-btn" id="btn-light" onclick="setTheme('light')">
+        <span class="color-dot light-dot"></span>
+        Minimalist & Clean
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Theme switcher using body classes and URL search params
+    function setTheme(theme) {
+      document.body.className = 'theme-' + theme;
+      
+      // Update active state in controls
+      document.querySelectorAll('.control-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-' + theme).classList.add('active');
+      
+      // Update URL search parameters
+      const url = new URL(window.location);
+      url.searchParams.set('variant', theme);
+      window.history.pushState({}, '', url);
+    }
+
+    // Initialize theme based on URL query
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const variant = params.get('variant');
+      if (variant === 'light') {
+        setTheme('light');
+      } else {
+        setTheme('dark');
+      }
+    });
+  </script>
+</body>
+</html>
